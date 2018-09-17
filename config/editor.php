@@ -1,22 +1,22 @@
 <?php
 return [
-    'autofocus' => true, 
-    'autosave' => false,
-    'forceSync' => true,
-    'indentWithTabs' => true,
-    'minHeight' => '480px',
-    'maxHeight' => '720px',
-    'allowAtxHeaderWithoutSpace' => true,
-    'strikethrough' => true,
-    'underscoresBreakWords' => true,
+    'autofocus' => true,  // 自动聚焦
+    'autosave' => false,  // 自动按保存
+    'forceSync' => true,  // 强制同步textarea
+    'indentWithTabs' => true, // tab对齐
+    'minHeight' => '480px', // 最小高度
+    'maxHeight' => '720px', //最大高度
+    'allowAtxHeaderWithoutSpace' => true, 
+    'strikethrough' => true, // 删除线
+    'underscoresBreakWords' => true, 
     'placeholder' => '在此输入内容...',
-    'singleLineBreaks' => true,
-    'spellChecker' => fasle,
-    'status' => true,
+    'singleLineBreaks' => true, // 单行折行
+    'spellChecker' => false, // 拼写检查
+    'status' => true, // 状态栏
     'statusBar' => ["autosave", "lines", "words", "cursor"],
     'styleSelectedText' => true,
-    'syncSideBySidePreviewScroll' => true,
+    'syncSideBySidePreviewScroll' => true, // 滚动预览
     'tabSize' => 4,
     'toolbarTips' => true,
-    'example' => true
+    'example' => true // 开启示例
 ];
