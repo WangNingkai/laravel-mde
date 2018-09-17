@@ -87,7 +87,9 @@ if (!function_exists('editor_js')) {
      */
     function editor_js()
     {
-        return '<script src="https://cdn.jsdelivr.net/npm/inscrybmde@1/dist/inscrybmde.min.js"></script>
+        return '
+    <script>window.jQuery || document.write(\'<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"><\/script>\')</script>
+    <script src="https://cdn.jsdelivr.net/npm/inscrybmde@1/dist/inscrybmde.min.js"></script>
     <script src="https://cdn.jsdelivr.net/combine/npm/inline-attachment@2/src/inline-attachment.min.js,npm/inline-attachment@2/src/codemirror-4.inline-attachment.min.js"></script>';
     }
 
@@ -114,7 +116,7 @@ if (!function_exists('editor_config')) {
                         bold: "__",
                         italic: "_"
                     },
-                    element: document.getElementById('.$editor_id.'),
+                    element: document.getElementById("'.$editor_id.'"),
                     forceSync: '.config('editor.forceSync').',
                     indentWithTabs: '.config('editor.indentWithTabs').',
                     insertTexts: {
@@ -138,19 +140,19 @@ if (!function_exists('editor_config')) {
                     },
                     spellChecker: '.config('editor.spellChecker').',
                     status : '.config('editor.status').',
-                    status: '.config('editor.statusBar').',
+                    status: ["autosave", "lines", "words", "cursor"],
                     styleSelectedText: '.config('editor.styleSelectedText').',
                     syncSideBySidePreviewScroll: '.config('editor.syncSideBySidePreviewScroll').',
                     tabSize: '.config('editor.tabSize').',
                     toolbar: [
                         "bold", "italic", "strikethrough", "heading", "|", "quote", "code", "table",
                         "horizontal-rule", "unordered-list", "ordered-list", "|",
-                        "link", "image", "|", "side-by-side", “fullscreen”, "|",
+                        "link", "image", "|", "side-by-side", "fullscreen", "|",
                         {
                             name: "guide",
                             action: function customFunction(editor) {
                                 var win = window.open(
-                                    “https://github.com/riku/Markdown-Syntax-CN/blob/master/syntax.md",
+                                    "https://github.com/riku/Markdown-Syntax-CN/blob/master/syntax.md",
                                     "_blank");
                                 if (win) {
                                     win.focus();
@@ -162,13 +164,12 @@ if (!function_exists('editor_config')) {
                             title: "Markdown 语法！",
                         },
                         {
-                            name: "publish",
+                            name: "fresh",
                             action: function customFunction(editor) {
-                                $("#article_submit").click();
                                 editor.clearAutosavedValue();
                             },
-                            className: "fa fa-paper-plane",
-                            title: "提交",
+                            className: "fa fa-history",
+                            title: "清理缓存",
                         }
                     ],
                     toolbarTips: '.config('editor.toolbarTips').',
@@ -185,7 +186,7 @@ if (!function_exists('editor_config')) {
                     progressText: "![正在上传文件...]()",
                     urlText: "\n ![未命名]({filename}) \n\n",
                     extraParams: {
-                        "_token": '.csrf_token().'
+                        "_token": "'.config('editor.csrf').'",
                     },
                     onFileUploadResponse: function(xhr) {
                         var result = JSON.parse(xhr.responseText),
