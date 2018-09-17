@@ -13,7 +13,6 @@ return [
     'singleLineBreaks' => true, // 单行折行
     'spellChecker' => false, // 拼写检查
     'status' => true, // 状态栏
-    'statusBar' => ["autosave", "lines", "words", "cursor"],
     'styleSelectedText' => true,
     'syncSideBySidePreviewScroll' => true, // 滚动预览
     'tabSize' => 4,
