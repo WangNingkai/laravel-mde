@@ -11,7 +11,7 @@
     <div class="container" style="margin:0 auto;">
         <textarea name="" id="meditor"></textarea>
     </div>
-    {!! editor_js('meditor','meditor-1') !!}
-    {!! editor_config() !!}
+    {!! editor_js() !!}
+    {!! editor_config('meditor','meditor-1') !!}
 </body>
 </html>
