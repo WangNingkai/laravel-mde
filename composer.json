@@ -23,5 +23,11 @@
             "src/helpers.php"
         ]
     },
-    "minimum-stability": "dev"
+    "extra": {
+        "laravel": {
+            "providers": [
+                "WangNingkai\\LaravelMde\\EditorServiceProvider"
+            ]
+        }
+    }
 }
