@@ -102,7 +102,7 @@ if (!function_exists('editor_config')) {
      */
     function editor_config($editor_id = 'mde-editor',$autosave_id)
     {
-        return '$(function () {
+        return '<script>$(function () {
                 var mdeditor = new InscrybMDE({
                     autofocus: '.config('editor.autofocus').',
                     autosave: {
@@ -205,7 +205,7 @@ if (!function_exists('editor_config')) {
                         return false;
                     }
                 });
-            });';
+            });</script>';
     }
 }
 
