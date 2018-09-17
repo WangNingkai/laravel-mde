@@ -1,0 +1,27 @@
+{
+    "name": "wangningkai/laravel-mde",
+    "description": "现代、简洁、易用的Markdown文本编辑器",
+    "type": "extension",
+    "keywords": [
+        "markdown",
+        "editor",
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [{
+        "name": "WangNingkai",
+        "email": "ningkai.wang@live.com"
+    }],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "WangNingkai\\LaravelMde\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "minimum-stability": "dev"
+}
