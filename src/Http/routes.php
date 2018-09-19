@@ -5,4 +5,4 @@ if(config('editor.example')){
     });
 }
 
-Route::post('laravel-mde/upload/image', 'WangNingkai\Laravel\Http\Controllers\EditorController@ImageUpload')->name('mde-image-upload');
+Route::post('laravel-mde/upload/image', '\WangNingkai\LaravelMde\Http\Controllers\EditorController@ImageUpload')->name('mde-image-upload');
