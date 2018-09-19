@@ -8,7 +8,8 @@
     {!! editor_css() !!}
 </head>
 <body>
-    <div class="container" style="width:640 px;height:auto;margin:0 auto;">
+    <div class="container" style="width:720px;height:auto;margin:0 auto;">
+        <h2>Markdown文本编辑器</h2>
         <textarea name="" id="meditor"></textarea>
     </div>
     {!! editor_js() !!}

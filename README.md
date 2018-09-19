@@ -13,8 +13,8 @@
 
 ## 安装与配置
 
-```
-composer require wangningkai/laravel-mde
+```bash
+composer require wangningkai/laravel-mde dev-master
 
 ```
 
@@ -32,8 +32,7 @@ composer require wangningkai/laravel-mde
 php artisan vendor:publish --force
 ```
 
-```
-
+```php
 <?php
 
 /**
@@ -61,7 +60,6 @@ return [
     'toolbarTips' => 'true',
     'example' => 'true', // 开启示例(可关闭)
 ];
-
 ```
 
 现在您可以访问 `/laravel-mde/example` 路由，不出意外，您可以看到扩展包提供的示例页面。
