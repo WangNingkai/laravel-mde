@@ -3,16 +3,16 @@
 if (!function_exists('editor_upload')) 
 {
     /**
- * 编辑器上传
- *
- * @param string $file
- * @param string $rule
- * @param string $path
- * @param mixed $isRandName
- * @param boolean $childPath
- * @return void
- */
-function editor_upload($file, $rule ,$path = 'upload', $isRandName = null, $childPath = false)
+     * 编辑器上传
+     *
+     * @param string $file
+     * @param string $rule
+     * @param string $path
+     * @param mixed $isRandName
+     * @param boolean $childPath
+     * @return void
+     */
+    function editor_upload($file, $rule ,$path = 'upload', $isRandName = null, $childPath = false)
     {
         if (!request()->hasFile($file)) {
             $data = ['status_code' => 500, 'message' => '上传文件为空'];
@@ -34,9 +34,7 @@ function editor_upload($file, $rule ,$path = 'upload', $isRandName = null, $chil
         } else {
             $path = './' . trim($path, './') . '/';
         }
-        if (!is_dir($path)) {
-            mkdir($path, 0755, true);
-        }
+        is_dir($path) || mkdir($path, 0755, true);
         $oldName = $file->getClientOriginalName();
         $newName =  $isRandName ? $isRandName . '.png' : 'image_' . time() . '_' . str_random(10) . '.png';
         if (!$file->move($path, $newName)) {
@@ -58,6 +56,7 @@ function editor_upload($file, $rule ,$path = 'upload', $isRandName = null, $chil
         ];
     }
 }
+
 
 if (!function_exists('editor_css')) {
     /**

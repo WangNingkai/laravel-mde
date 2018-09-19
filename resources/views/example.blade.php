@@ -8,7 +8,7 @@
     {!! editor_css() !!}
 </head>
 <body>
-    <div class="container" style="margin:0 auto;">
+    <div class="container" style="width:640 px;height:auto;margin:0 auto;">
         <textarea name="" id="meditor"></textarea>
     </div>
     {!! editor_js() !!}
