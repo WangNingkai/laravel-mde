@@ -45,7 +45,6 @@ function editor_upload($file, $rule ,$path = 'upload', $isRandName = null, $chil
         $filePath = trim($path, '.');
         $absolutePath = public_path($filePath).$newName;
         $publicPath = $filePath.$newName;
-        // 图片自动加水印设置
         return [
             'status_code' => 200,
             'message' => '上传成功',
@@ -186,7 +185,7 @@ if (!function_exists('editor_config')) {
                     progressText: "![正在上传文件...]()",
                     urlText: "\n ![未命名]({filename}) \n\n",
                     extraParams: {
-                        "_token": "'.config('editor.csrf').'",
+                        "_token": "'.csrf_token().'",
                     },
                     onFileUploadResponse: function(xhr) {
                         var result = JSON.parse(xhr.responseText),

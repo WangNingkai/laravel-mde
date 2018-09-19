@@ -17,7 +17,6 @@ return [
     'syncSideBySidePreviewScroll' => 'true', // 滚动预览
     'tabSize' => 4,
     'toolbarTips' => 'true',
-    'csrf' =>  csrf_token(),
     'example' => 'true', // 开启示例
     
 ];
